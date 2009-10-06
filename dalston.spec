@@ -25,6 +25,7 @@ BuildRequires: libGConf2-devel
 BuildRequires: intltool
 BuildRequires: gettext
 BuildRequires: libcanberra-gtk0
+BuildRequires: mutter-moblin-devel
 
 %description
 System information icons for Moblin
