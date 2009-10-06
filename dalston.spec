@@ -19,12 +19,11 @@ BuildRequires: libdbus-glib-devel
 BuildRequires: gtk+2-devel
 BuildRequires: libpulseaudio-devel
 BuildRequires: libcanberra-devel
-BuildRequires: libnbtk-devel
+BuildRequires: nbtk-devel
 BuildRequires: libnotify-devel
 BuildRequires: libGConf2-devel
 BuildRequires: intltool
 BuildRequires: gettext
-BuildRequires: libcanberra-gtk0
 BuildRequires: mutter-moblin-devel
 
 %description
