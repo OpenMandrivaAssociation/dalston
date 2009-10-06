@@ -24,6 +24,7 @@ BuildRequires: libnotify-devel
 BuildRequires: libGConf2-devel
 BuildRequires: intltool
 BuildRequires: gettext
+BuildRequires: gnome-common
 BuildRequires: moblin-panel-devel
 
 %description
