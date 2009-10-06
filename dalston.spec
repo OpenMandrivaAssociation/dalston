@@ -24,7 +24,7 @@ BuildRequires: libnotify-devel
 BuildRequires: libGConf2-devel
 BuildRequires: intltool
 BuildRequires: gettext
-BuildRequires: mutter-moblin-devel
+BuildRequires: moblin-panel-devel
 
 %description
 System information icons for Moblin
