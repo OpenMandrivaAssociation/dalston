@@ -1,5 +1,5 @@
 %define version 0.1.6
-%define rel 1
+%define rel 2
 %define snapshot git20091002
 %define release %mkrel 0.%{snapshot}.%{rel}
 %define sversion %{version}%{snapshot}
@@ -12,6 +12,7 @@ License: LGPL 2.1
 URL: http://www.moblin.org
 Release: %{release}
 Source0: %{name}-%{sversion}.tar.gz
+Patch0: dalston-0.1.6git20091002-powerpolicy.patch
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 BuildRequires: libglib2-devel
@@ -32,6 +33,7 @@ System information icons for Moblin
 
 %prep
 %setup -q -n %{name}-%{sversion}
+%patch0 -p1 -b .powerpolicy
 
 %build
 NOCONFIGURE=foo ./autogen.sh
