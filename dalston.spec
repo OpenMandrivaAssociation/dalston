@@ -1,11 +1,24 @@
+%define version 0.1.10
+%define rel 1
+%define snapshot 0
+# git20091002
+
+%if %{snapshot}
+%define release %mkrel 0.%{snapshot}.%{rel}
+%define sversion %{version}%{snapshot}
+%else
+%define sversion %{version}
+%define release %mkrel %{rel}
+%endif
+
 Name: dalston
 Summary: System information icons for Moblin
 Group: Graphical desktop/Other 
-Version: 0.1.10
+Version: %{version}
+Release: %{release}
 License: LGPL 2.1
 URL: http://www.moblin.org
-Release: %mkrel 1
-Source0: http://git.moblin.org/cgit.cgi/%{name}/snapshot/%{name}-%{version}.tar.bz2
+Source0: http://git.moblin.org/cgit.cgi/%{name}/snapshot/%{name}-%{sversion}.tar.bz2
 Patch0: dalston-0.1.6git20091002-powerpolicy.patch
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
@@ -26,7 +39,7 @@ BuildRequires: moblin-panel-devel
 System information icons for Moblin
 
 %prep
-%setup -q -n %{name}-%{version}
+%setup -q -n %{name}-%{sversion}
 %patch0 -p1 -b .powerpolicy
 
 %build
