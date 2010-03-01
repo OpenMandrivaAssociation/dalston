@@ -1,4 +1,4 @@
-%define version 0.1.11
+%define version 0.1.12
 %define rel 1
 %define snapshot 0
 # git20091002
@@ -11,29 +11,29 @@
 %define release %mkrel %{rel}
 %endif
 
-Name: dalston
-Summary: System information icons for Moblin
-Group: Graphical desktop/Other 
-Version: %{version}
-Release: %{release}
-License: LGPL 2.1
-URL: http://www.moblin.org
-Source0: http://git.moblin.org/cgit.cgi/%{name}/snapshot/%{name}-%{sversion}.tar.bz2
-Patch0: dalston-0.1.6git20091002-powerpolicy.patch
-BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
+Name:		dalston
+Summary:	System information icons for Moblin
+Group:		Graphical desktop/Other 
+Version:	%{version}
+Release:	%{release}
+License:	LGPL 2.1
+URL:		http://www.moblin.org
+Source0:	http://git.moblin.org/cgit.cgi/%{name}/snapshot/%{name}-%{sversion}.tar.bz2
+Patch0:		dalston-0.1.6git20091002-powerpolicy.patch
+BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
-BuildRequires: libglib2-devel
-BuildRequires: libdbus-glib-devel
-BuildRequires: gtk+2-devel
-BuildRequires: libpulseaudio-devel
-BuildRequires: libcanberra-devel
-BuildRequires: nbtk-devel
-BuildRequires: libnotify-devel
-BuildRequires: libGConf2-devel
-BuildRequires: intltool
-BuildRequires: gettext
-BuildRequires: gnome-common
-BuildRequires: moblin-panel-devel
+BuildRequires:	libglib2-devel
+BuildRequires:	libdbus-glib-devel
+BuildRequires:	gtk+2-devel
+BuildRequires:	libpulseaudio-devel
+BuildRequires:	libcanberra-devel
+BuildRequires:	nbtk-devel
+BuildRequires:	libnotify-devel
+BuildRequires:	libGConf2-devel
+BuildRequires:	intltool
+BuildRequires:	gettext
+BuildRequires:	gnome-common
+BuildRequires:	moblin-panel-devel
 
 %description
 System information icons for Moblin
