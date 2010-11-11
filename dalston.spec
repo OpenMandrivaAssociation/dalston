@@ -26,7 +26,7 @@ BuildRequires:	libglib2-devel
 BuildRequires:	libdbus-glib-devel
 BuildRequires:	gtk+2-devel
 BuildRequires:	libpulseaudio-devel
-BuildRequires:	libcanberra-devel
+BuildRequires:	libcanberra-gtk-devel
 BuildRequires:	nbtk-devel
 BuildRequires:	libnotify-devel
 BuildRequires:	libGConf2-devel
