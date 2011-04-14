@@ -1,25 +1,13 @@
-%define version 0.1.12
-%define rel 2
-%define snapshot 0
-# git20091002
-
-%if %{snapshot}
-%define release %mkrel 0.%{snapshot}.%{rel}
-%define sversion %{version}%{snapshot}
-%else
-%define sversion %{version}
-%define release %mkrel %{rel}
-%endif
-
 Name:		dalston
 Summary:	System information icons for Moblin
 Group:		Graphical desktop/Other 
-Version:	%{version}
-Release:	%{release}
+Version:	0.1.12
+Release:	%mkrel 3
 License:	LGPL 2.1
 URL:		http://www.moblin.org
-Source0:	http://git.moblin.org/cgit.cgi/%{name}/snapshot/%{name}-%{sversion}.tar.bz2
+Source0:	http://git.moblin.org/cgit.cgi/%{name}/snapshot/%{name}-%{version}.tar.bz2
 Patch0:		dalston-0.1.6git20091002-powerpolicy.patch
+Patch1:		dalston-0.1.12-libnotify.patch
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 BuildRequires:	libglib2-devel
@@ -39,11 +27,12 @@ BuildRequires:	moblin-panel-devel
 System information icons for Moblin
 
 %prep
-%setup -q -n %{name}-%{sversion}
+%setup -q -n %{name}-%{version}
 %patch0 -p1 -b .powerpolicy
+%patch1 -p0 -b .libnotify
 
 %build
-NOCONFIGURE=foo ./autogen.sh
+NOCONFIGURE=yes ./autogen.sh
 %configure2_5x --enable-settings-capplet
 %make
 
@@ -51,10 +40,12 @@ NOCONFIGURE=foo ./autogen.sh
 rm -rf %{buildroot}
 %makeinstall_std
 
+%find_lang %name
+
 %clean
 rm -rf %{buildroot}
 
-%files 
+%files -f %name.lang
 %defattr(-,root,root,-)
 %doc COPYING NEWS AUTHORS README ChangeLog
 %{_sysconfdir}/xdg/autostart/*
@@ -62,7 +53,5 @@ rm -rf %{buildroot}
 %{_libexecdir}/dalston-volume-applet
 %{_bindir}/dalston-power-settings-capplet
 %{_datadir}/dbus-1/services/org.moblin.*.service
-%{_datadir}/dalston/icons/*
+%{_datadir}/dalston
 %{_datadir}/applications/*.desktop
-%{_datadir}/dalston/theme/*
-%{_datadir}/locale/*
