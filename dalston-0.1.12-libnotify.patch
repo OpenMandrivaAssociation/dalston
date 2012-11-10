@@ -1,0 +1,24 @@
+--- dalston/dalston-button-monitor.c.libnotify	2011-04-14 16:17:42.000000000 +0200
++++ dalston/dalston-button-monitor.c	2011-04-14 16:17:52.000000000 +0200
+@@ -280,8 +280,7 @@
+ 
+     priv->shutdown_notification = notify_notification_new (_("Would you like to turn off now?"),
+                                                            _("If you don't decide I'll turn off in 30 seconds"),
+-                                                           "system-shutdown",
+-                                                           NULL);
++                                                           "system-shutdown");
+     notify_notification_set_urgency (priv->shutdown_notification, NOTIFY_URGENCY_CRITICAL);
+     notify_notification_set_timeout (priv->shutdown_notification, NOTIFY_EXPIRES_NEVER);
+     notify_notification_add_action (priv->shutdown_notification,
+--- dalston/dalston-power-applet.c.libnotify	2011-04-14 16:17:07.000000000 +0200
++++ dalston/dalston-power-applet.c	2011-04-14 16:17:19.000000000 +0200
+@@ -294,8 +294,7 @@
+ 
+   note = notify_notification_new (_(messages[level].title),
+                                   _(messages[level].message),
+-                                  _(messages[level].icon),
+-                                  NULL);
++                                  _(messages[level].icon));
+ 
+   notify_notification_set_timeout (note, 10000);
+ 
