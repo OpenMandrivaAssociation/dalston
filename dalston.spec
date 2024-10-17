@@ -4,7 +4,7 @@ Group:		Graphical desktop/Other
 Version:	0.1.12
 Release:	%mkrel 3
 License:	LGPL 2.1
-URL:		http://www.moblin.org
+URL:		https://www.moblin.org
 Source0:	http://git.moblin.org/cgit.cgi/%{name}/snapshot/%{name}-%{version}.tar.bz2
 Patch0:		dalston-0.1.6git20091002-powerpolicy.patch
 Patch1:		dalston-0.1.12-libnotify.patch
